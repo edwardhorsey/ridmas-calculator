@@ -1,0 +1,163 @@
+$unit: 10px;
+$lightgrey: rgb(226, 226, 226);
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 1.5em;
+  font-family: 'Courier New', Courier, monospace;
+  main{
+    display: flex;
+    flex-direction: column;
+    padding: 5*$unit;
+    
+    section {
+      border: 2px solid $lightgrey;
+      padding: $unit;
+
+      &.screen {
+        letter-spacing: 0.5*$unit;
+        
+        p {
+          font-weight: 900;
+          color: purple;
+          float: right;
+        }
+      }
+
+      &.reset {
+        background-color: $lightgrey;
+        font-weight: 600;
+
+        &:hover {
+        background-color: rgba(128, 0, 128, 0.2);
+        background-color: rgba(128, 0, 128, 0.2);
+
+        }
+
+      }
+      &.error-box {
+        color: red;
+      }
+
+      &.answer-box {
+        color: green;
+      }
+    }
+
+    article {
+      border: 2px solid $lightgrey;
+      padding: $unit;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2*$unit;
+
+      grid-template-areas: 
+      "root power divide multiply"
+      "seven eight nine add"
+      "four five six subtract"
+      "one two three enter"
+      "zero zero dot enter"
+      ;
+
+      div {
+        border: 2px solid black;
+        border-radius: 0.5*$unit;
+        padding: $unit;
+        color: rgb(212, 118, 118);
+        width: 100px;
+        
+        &.operator {
+          color: black;
+          background-color: rgba(255, 166, 0, 0.438);
+          &:hover {
+            background-color: rgba(255, 166, 0, 0.7)
+          }
+        }
+
+        &.number {
+          color: rgb(44, 44, 44);
+          background-color: $lightgrey;
+          &:hover {
+            background-color: rgb(189, 189, 189);
+          }
+        }
+
+        &#root {
+          grid-area: root;
+        }
+        
+        &#power {
+          grid-area: power;
+        }
+
+        &#divide {
+          grid-area: divide;
+        }
+
+        &#multiply {
+          grid-area: multiply;
+        }
+
+        &#seven {
+          grid-area: seven;
+        }
+
+        &#eight {
+          grid-area: eight;
+        }
+
+        &#nine {
+          grid-area: nine;
+        }
+
+        &#subtract {
+          grid-area: subtract;
+        }
+
+        &#four {
+          grid-area: four;
+        }
+
+        &#five {
+          grid-area: five;
+        }
+
+        &#six {
+          grid-area: six;
+        }
+
+        &#add {
+          grid-area: add;
+        }
+
+        &#one {
+          grid-area: one;
+        }
+
+        &#two {
+          grid-area: two;
+        }
+
+        &#three {
+          grid-area: three;
+        }
+
+        &#zero {
+          grid-area: zero;
+        }
+
+        &#dot {
+          grid-area: dot;
+        }
+
+        &#enter {
+          grid-area: enter;
+        }
+
+      }
+    }
+  }
+}
